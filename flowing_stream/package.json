@@ -1,0 +1,30 @@
+{
+  "name": "node_js_live_stream_tutorial",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "gzip_simple": "node gzip_simple video.mp4",
+    "gzip_stream": "node gzip_stream video.mp4",
+    "gzip_receive": "node gzipReceive",
+    "gzip_send": "node gzipSend video.mp4 localhost",
+    "gzip_receive_and_send": "npm-run-all -p gzip_receive gzip_send",
+    "gzip_receive_cyphered": "node gzipReceive_cyphered",
+    "gzip_send_cyphered": "node gzipSend_cyphered video.mp4 localhost",
+    "gzip_receive_and_send_cyphered": "npm-run-all -p gzip_receive_cyphered gzip_send_cyphered",
+    "dev": "npm-run-all -p nodemon browser-sync",
+    "nodemon": "nodemon index.js",
+    "browser-sync": "browser-sync start -s --files=index.js --no-open --no-notify --reload-delay=500"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "browser-sync": "^2.26.7",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.4"
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
+  }
+}
