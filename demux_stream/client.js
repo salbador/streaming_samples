@@ -2,6 +2,7 @@
 
 const child_process = require('child_process');
 const net = require('net');
+const port = 3030;
 
 function multiplexChannels(sources, destination) {
   let totalChannels = sources.length;
@@ -27,7 +28,7 @@ function multiplexChannels(sources, destination) {
   }
 }
 
-const socket = net.connect(3000, () => {        //[1]
+const socket = net.connect(port, () => {        //[1]
   const child = child_process.fork(           //[2]
     process.argv[2],
     process.argv.slice(3),

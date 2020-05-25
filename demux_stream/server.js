@@ -2,6 +2,7 @@
 
 const net = require('net');
 const fs = require('fs');
+const port = 3030;
 
 function demultiplexChannel(source, destinations) {
   let currentChannel = null;
@@ -45,5 +46,5 @@ net.createServer(socket => {
   const stderrStream = fs.createWriteStream('stderr.log');
   demultiplexChannel(socket, [stdoutStream, stderrStream]);
 })
-  .listen(3000, () => console.log('Server started'))
+  .listen(port, () => console.log(`Server started http://localhost:${port}`))
 ;

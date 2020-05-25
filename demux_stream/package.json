@@ -6,9 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "server": "node server",
-    "client": "node generateData",
+    "client": "node client generateData.js",
     "demux": "npm-run-all -p server client",
-    "dev": "npm-run-all -p nodemon browser-sync",
+    "dev": "npm-run-all -p server browser-sync client ",
     "nodemon": "nodemon index.js",
     "browser-sync": "browser-sync start -s --files=index.js --no-open --no-notify --reload-delay=500"
   },
